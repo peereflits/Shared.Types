@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Peereflits.Shared.Types.Mail;
 using Xunit;
 
@@ -17,7 +16,7 @@ public class EmailTest
     public void WhenEmailIsValid_ItShouldBeTrue(string email)
     {
         var subject = new Email(email);
-        subject.IsValid.Should().BeTrue();
+        Assert.True(subject.IsValid);
     }
 
     [Theory]
@@ -40,7 +39,7 @@ public class EmailTest
     public void WhenEmailIsInvalid_ItShouldBeFalse(string email)
     {
         var subject = new Email(email);
-        subject.IsValid.Should().BeFalse();
+        Assert.False(subject.IsValid);
     }
 
     [Theory]
@@ -51,14 +50,14 @@ public class EmailTest
     public void WhenEmailIsEmpty_ItShouldBeFalse(string email)
     {
         var subject = new Email(email);
-        subject.IsValid.Should().BeFalse();
+        Assert.False(subject.IsValid);
     }
 
     [Fact]
     public void WhenCreatedWithoutAddress_ItShouldReturnFalse()
     {
         var subject = new Email(null);
-        subject.IsValid.Should().BeFalse();
+        Assert.False(subject.IsValid);
     }
 
     [Fact]

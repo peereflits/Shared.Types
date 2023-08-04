@@ -1,5 +1,4 @@
 ﻿using System;
-using FluentAssertions;
 using Peereflits.Shared.Types.Bsn;
 using Xunit;
 
@@ -7,28 +6,28 @@ namespace Peereflits.Shared.Types.Tests.Bsn;
 
 public class BurgerServiceNummerTest
 {
-    public const int ValidBSN = 017399609;
-    public const int InvalidBSN = 99999999;
-    public const int InvalidLengthBSN = 1234567890;
-    public const int EmptyBSN = 0;
+    private const int ValidBsn = 017399609;
+    private const int InvalidBsn = 99999999;
+    private const int InvalidLengthBsn = 1234567890;
+    private const int EmptyBsn = 0;
 
     [Fact]
     public void WhenBSNHasInvalidLength_ItShouldBeInvalid()
     {
-        Burgerservicenummer result = InvalidLengthBSN;
+        Burgerservicenummer result = InvalidLengthBsn;
 
-        result.IsValid.Should().BeFalse();
+        Assert.False(result.IsValid);
     }
 
     [Fact]
     public void WhenBSNIsValidlyParsed_ItShouldReturnTheBSN()
     {
         string bsnText = "017399609";
-        Burgerservicenummer bsn = int.Parse(bsnText);
+        Burgerservicenummer actual = int.Parse(bsnText);
 
-        var result = Burgerservicenummer.Parse(bsnText);
+        Burgerservicenummer result = Burgerservicenummer.Parse(bsnText);
 
-        result.Should().Be(bsn);
+        Assert.Equal(result, actual);
     }
 
     [Theory]
@@ -39,51 +38,48 @@ public class BurgerServiceNummerTest
     {
         Burgerservicenummer result = Burgerservicenummer.Parse(number);
 
-        result.Should().Be(expectedResult);
+        Assert.Equal((Burgerservicenummer)expectedResult, result);
     }
 
     [Fact]
     public void WhenBSNPassesElfProef_ItShouldBeValid()
     {
-        Burgerservicenummer result = ValidBSN;
+        Burgerservicenummer result = ValidBsn;
 
-        result.IsValid.Should().BeTrue();
+        Assert.True(result.IsValid);
     }
 
     [Fact]
     public void WhenBSNDoesNotPassElfProef_ItShouldBeInvalid()
     {
-        Burgerservicenummer result = InvalidBSN;
+        Burgerservicenummer result = InvalidBsn;
             
-        result.IsValid.Should().BeFalse();
+        Assert.False(result.IsValid);
     }
 
     [Fact]
     public void WhenBSNIsEmpty_ItShouldBeInvalid()
     {
-        Burgerservicenummer result = EmptyBSN;
+        Burgerservicenummer result = EmptyBsn;
 
-        result.IsValid.Should().BeFalse();
+        Assert.False(result.IsValid);
     }
 
     [Theory]
-    [InlineData(InvalidBSN)]
-    [InlineData(InvalidLengthBSN)]
-    [InlineData(EmptyBSN)]
-    public void WhenEnsureIsValidWhileBsnIsInvalid_ItShouldThrowAnInvalidBsnException(int number)
+    [InlineData(InvalidBsn)]
+    [InlineData(InvalidLengthBsn)]
+    [InlineData(EmptyBsn)]
+    public void WhenEnsureIsValid_WhileInvalid_ItShouldThrow(int number)
     {
         Burgerservicenummer result = number;
 
-        Action invalidBsnValidation = () => result.EnsureIsValid();
-        invalidBsnValidation.Should().Throw<InvalidBsnException>();
+        Assert.Throws<InvalidBsnException>(() => result.EnsureIsValid());
     }
 
     [Fact]
-    public void WhenEnsureIsValidWhileBsnIsValid_ItShouldNotThrowAnInvalidBsnException()
+    public void WhenEnsureIsValid_WhileValid_ItShouldNotThrow()
     {
-        Burgerservicenummer result = ValidBSN;
-
-        Action validBsnValidation = () => result.EnsureIsValid();
-        validBsnValidation.Should().NotThrow<InvalidBsnException>();
+        Burgerservicenummer result = ValidBsn;
+        result.EnsureIsValid();
     }
 }
