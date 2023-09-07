@@ -21,9 +21,11 @@ public class BankAccountNumber
 
     private readonly Regex regex = new Regex(@"^([A-Z]{2})(\d{2})([A-Z0-9]{12,28})");
 
-    public BankAccountNumber(string accountNumber)
+    public BankAccountNumber(string? accountNumber)
     {
-        original = accountNumber;
+        original = accountNumber ?? string.Empty;
+        CountryCode = string.Empty;
+        BasicBankAccountNumber = string.Empty;
         Validate();
     }
 

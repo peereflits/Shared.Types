@@ -3,19 +3,11 @@
   <PropertyGroup>
     <AssemblyName>Peereflits.Shared.Types.Tests</AssemblyName>
     <RootNamespace>Peereflits.Shared.Types.Tests</RootNamespace>
-    <TargetFrameworks>netcoreapp3.1;net6.0;net7.0</TargetFrameworks>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup>
-    <ApplicationIcon>..\Solution Items\favicon.ico</ApplicationIcon>
     <IsPackable>false</IsPackable>
-    <LangVersion>latest</LangVersion>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningsAsErrors />
   </PropertyGroup>
 
   <ItemGroup>
@@ -27,7 +19,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
-    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.6.3" />
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.7.2" />
     <PackageReference Include="xunit" Version="2.5.0" />
     <PackageReference Include="xunit.runner.visualstudio" Version="2.5.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -37,7 +29,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Types\Common.Types.csproj" />
+    <ProjectReference Include="..\Types\Types.csproj" />
   </ItemGroup>
 
 </Project>

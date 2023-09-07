@@ -3,21 +3,16 @@
   <PropertyGroup>
     <AssemblyName>Peereflits.Shared.Types</AssemblyName>
     <RootNamespace>Peereflits.Shared.Types</RootNamespace>
-    <TargetFrameworks>netstandard2.0;netstandard2.1;net6.0;net7.0</TargetFrameworks>
-    <VersionPrefix>1.0.1</VersionPrefix>
+    <TargetFrameworks>net6.0;net7.0</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup>
-    <ApplicationIcon>..\Solution Items\favicon.ico</ApplicationIcon>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
-    <LangVersion>latest</LangVersion>
+    <IsPackable>true</IsPackable>
   </PropertyGroup>
 
+
   <PropertyGroup>
-    <Authors>Peereflits</Authors>
-    <Copyright>No Copyright ©, The Netherlands</Copyright>
     <Description>Peereflits.Shared.Types is an implementation library for shared types that act as primitive, domain driven types.</Description>
-    <Product>Peereflits.Shared.Types</Product>
   </PropertyGroup>
 
   <PropertyGroup Label="Package">
@@ -32,18 +27,6 @@ This component is a shared infrastructure library of Peereflits.
     <RepositoryType>git</RepositoryType>
     <RepositoryUrl>https://github.com/peereflits/Shared.Types</RepositoryUrl>
     <Title>Peereflits.Shared.Types package</Title>
-  </PropertyGroup>
-
-  <PropertyGroup>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningsAsErrors />
-  </PropertyGroup>
-
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>full</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
   </PropertyGroup>
 
   <ItemGroup>

@@ -9,9 +9,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Solution Items\PackageIcon.png = Solution Items\PackageIcon.png
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Types", "Types\Common.Types.csproj", "{021E7AB3-392B-40D2-B528-728AF73DB82C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Types", "Types\Types.csproj", "{021E7AB3-392B-40D2-B528-728AF73DB82C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Common.Types.Tests", "Types.Tests\Common.Types.Tests.csproj", "{C16CFDB8-A5BB-472F-BB01-1149859F688E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Types.Tests", "Types.Tests\Types.Tests.csproj", "{C16CFDB8-A5BB-472F-BB01-1149859F688E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

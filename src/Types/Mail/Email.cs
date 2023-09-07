@@ -9,7 +9,7 @@ public class Email
 
     private readonly string email;
 
-    public Email(string email)
+    public Email(string? email)
     {
         this.email = email?.Trim() ?? string.Empty;
         IsValid = regex.IsMatch(this.email);
@@ -33,7 +33,7 @@ public class Email
 
     public static implicit operator Email(string email) => new Email(email);
 
-    public override bool Equals(object obj)
+    public override bool Equals(object? obj)
     {
         if(obj == null)
         {
