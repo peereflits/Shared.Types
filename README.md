@@ -33,6 +33,13 @@ As a general rule:
 <sup>1)</sup> A type such as "Customer number" should therefore not occur, as different definitions (format, length, use) can live within different projects (and organisations).<br />
 <sup>2)</sup> For example: ISO with "country" and its [ISO country code](https://www.nationsonline.org/oneworld/country_code_list.htm)
 
+### Version support
+
+This library supports the following .NET versions:
+1. .NET 6.0
+1. .NET 7.0
+1. .NET 8.0
+
 
 ---
 
