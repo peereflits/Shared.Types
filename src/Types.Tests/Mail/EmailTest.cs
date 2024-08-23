@@ -24,18 +24,18 @@ public class EmailTest
     [InlineData("host.nl")]
     [InlineData("name@host")]
     [InlineData("name@subname@host")]
-    [InlineData("Abc.example.com")]     // No `@`
-    [InlineData("A@b@c@example.com")]   // multiple `@`
-    [InlineData("ma...ma@jjf.co")]      // continuous multiple dots in name
-    [InlineData("ma@jjf.c")]            // only 1 char in extension
-    [InlineData("ma@jjf..com")]         // continuous multiple dots in domain
-    [InlineData("ma@@jjf.com")]         // continuous multiple `@`
-    [InlineData("@majjf.com")]          // nothing before `@`
-    [InlineData("ma.@jjf.com")]         // nothing after `.`
-    [InlineData("ma_@jjf.com")]         // nothing after `_`
-    [InlineData("ma_@jjf")]             // no domain extension 
-    [InlineData("ma_@jjf.")]            // nothing after `_` and .
-    [InlineData("ma@jjf.")]             // nothing after `.`
+    [InlineData("Abc.example.com")]   // No `@`
+    [InlineData("A@b@c@example.com")] // multiple `@`
+    [InlineData("ma...ma@jjf.co")]    // continuous multiple dots in name
+    [InlineData("ma@jjf.c")]          // only 1 char in extension
+    [InlineData("ma@jjf..com")]       // continuous multiple dots in domain
+    [InlineData("ma@@jjf.com")]       // continuous multiple `@`
+    [InlineData("@majjf.com")]        // nothing before `@`
+    [InlineData("ma.@jjf.com")]       // nothing after `.`
+    [InlineData("ma_@jjf.com")]       // nothing after `_`
+    [InlineData("ma_@jjf")]           // no domain extension 
+    [InlineData("ma_@jjf.")]          // nothing after `_` and .
+    [InlineData("ma@jjf.")]           // nothing after `.`
     public void WhenEmailIsInvalid_ItShouldBeFalse(string email)
     {
         var subject = new Email(email);
@@ -47,9 +47,9 @@ public class EmailTest
     [InlineData(null)]
     [InlineData(" ")]
     [InlineData("\r\n")]
-    public void WhenEmailIsEmpty_ItShouldBeFalse(string email)
+    public void WhenEmailIsEmpty_ItShouldBeFalse(string? email)
     {
-        var subject = new Email(email);
+        var subject = new Email(email ?? string.Empty);
         Assert.False(subject.IsValid);
     }
 

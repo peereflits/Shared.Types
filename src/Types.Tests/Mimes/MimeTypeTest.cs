@@ -407,9 +407,9 @@ public class MimeTypeTest
     [InlineData(" ")]
     [InlineData(default(string))]
     [InlineData(".unknown")]
-    public void WhenGetByWithUnknownExtension_ItShouldReturnAnEmptyInstance(string extension)
+    public void WhenGetByWithUnknownExtension_ItShouldReturnAnEmptyInstance(string? extension)
     {
-        MimeType result = MimeType.GetBy(extension);
+        MimeType result = MimeType.GetBy(extension ?? string.Empty);
         Assert.NotNull(result);
         Assert.Equal(string.Empty, result.Mime);
         Assert.Equal(string.Empty, result.Extension);

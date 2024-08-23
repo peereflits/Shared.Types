@@ -114,9 +114,9 @@ public class PhoneNumberTest
     [InlineData("\t")]
     [InlineData(" ")]
     [InlineData("Not a phone number")]
-    public void WhenPhoneNumberIsNotANumber_ItShouldHaveWarnings(string number)
+    public void WhenPhoneNumberIsNotANumber_ItShouldHaveWarnings(string? number)
     {
-        var result = new PhoneNumber(number);
+        var result = new PhoneNumber(number ?? string.Empty);
 
         Assert.True(result.ValidationMessages.Any());
     }
