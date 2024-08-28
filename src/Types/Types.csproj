@@ -22,6 +22,7 @@ Peereflits.Shared.Types is an implementation library for shared types that act a
 This component is a shared infrastructure library of Peereflits.
     </PackageDescription>
     <PackageIcon>PackageIcon.png</PackageIcon>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/peereflits/Shared.Types</PackageProjectUrl>
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <RepositoryType>git</RepositoryType>
