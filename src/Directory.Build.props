@@ -1,32 +1,41 @@
 <Project>
 
-  <PropertyGroup>
-    <ApplicationIcon>..\Solution Items\favicon.ico</ApplicationIcon>
-    <LangVersion>latest</LangVersion>
-    <Nullable>enable</Nullable>
-    <OutputPath>bin\$(Configuration)\</OutputPath>
-  </PropertyGroup>
+	<PropertyGroup>
+		<TargetFrameworks>net8.0;net9.0;net10.0</TargetFrameworks>
+		<ApplicationIcon>..\Solution Items\favicon.ico</ApplicationIcon>
+		<LangVersion>latest</LangVersion>
+		<Nullable>enable</Nullable>
+		<OutputPath>bin\$(Configuration)\</OutputPath>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <Authors>Peereflits</Authors>
-    <Copyright>No Copyright &#169;, The Netherlands</Copyright>
-    <Product>Peereflits.Shared.Types</Product>
-  </PropertyGroup>
+	<PropertyGroup>
+		<ManagePackageVersionsCentrally>true</ManagePackageVersionsCentrally>
+	</PropertyGroup>
 
-  <PropertyGroup Label="Package">
-    <VersionPrefix>1.0.2</VersionPrefix>
-  </PropertyGroup>
+	<PropertyGroup>
+		<Authors>Peereflits</Authors>
+		<Copyright>No Copyright &#169;, The Netherlands</Copyright>
+		<Product>Peereflits.Shared.Types</Product>
+	</PropertyGroup>
 
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <DebugType>full</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
-  </PropertyGroup>
+	<PropertyGroup Label="Package">
+		<VersionPrefix>1.0.2</VersionPrefix>
+	</PropertyGroup>
 
-  <PropertyGroup>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
-    <WarningsAsErrors />
-  </PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugType>full</DebugType>
+	</PropertyGroup>
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+		<DebugType>pdbonly</DebugType>
+	</PropertyGroup>
+
+	<PropertyGroup>
+		<TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+		<WarningsAsErrors />
+		<!-- Suppress NuGet restore warning NU1507 when using central package management in local dev environments -->
+		<RestoreNoWarn>NU1507</RestoreNoWarn>
+		<!-- Also suppress it as a compiler/msbuild no-warn code so it doesn't get promoted to error -->
+		<NoWarn>NU1507</NoWarn>
+	</PropertyGroup>
 
 </Project>

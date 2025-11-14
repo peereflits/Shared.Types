@@ -3,7 +3,6 @@
   <PropertyGroup>
     <AssemblyName>Peereflits.Shared.Types</AssemblyName>
     <RootNamespace>Peereflits.Shared.Types</RootNamespace>
-    <TargetFrameworks>net6.0;net8.0;net9.0</TargetFrameworks>
   </PropertyGroup>
 
   <PropertyGroup>

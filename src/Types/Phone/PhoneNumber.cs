@@ -6,7 +6,7 @@ namespace Peereflits.Shared.Types.Phone;
 
 public class PhoneNumber
 {
-    private static Regex PhoneNumberMatcher = new Regex(@"^(\+|00)(?<country>\d{1,3})\s(?<area>\d{1,4})(?<subscriber>(\s\d+)+)$", RegexOptions.Compiled | RegexOptions.ExplicitCapture);
+    private static readonly Regex PhoneNumberMatcher = new Regex(@"^(\+|00)(?<country>\d{1,3})\s(?<area>\d{1,4})(?<subscriber>(\s\d+)+)$", RegexOptions.Compiled | RegexOptions.ExplicitCapture);
     public const string AccessCode = "+";
 
     public PhoneNumber(int countryCode, int areaCode, long subscriberNumber)

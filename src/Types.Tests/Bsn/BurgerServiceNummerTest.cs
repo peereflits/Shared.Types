@@ -1,5 +1,4 @@
-﻿using System;
-using Peereflits.Shared.Types.Bsn;
+﻿using Peereflits.Shared.Types.Bsn;
 using Xunit;
 
 namespace Peereflits.Shared.Types.Tests.Bsn;

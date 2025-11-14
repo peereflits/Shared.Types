@@ -9,7 +9,7 @@ namespace Peereflits.Shared.Types.Iban;
 public class BankAccountNumber
 {
     private readonly Dictionary<string, int> ibanLengths =
-        new Dictionary<string, int>
+        new()
         {
             { "NL", 18 },
             { "DE", 22 },
@@ -19,7 +19,7 @@ public class BankAccountNumber
 
     private readonly string original;
 
-    private readonly Regex regex = new Regex(@"^([A-Z]{2})(\d{2})([A-Z0-9]{12,28})");
+    private readonly Regex regex = new(@"^([A-Z]{2})(\d{2})([A-Z0-9]{12,28})");
 
     public BankAccountNumber(string? accountNumber)
     {
@@ -29,9 +29,9 @@ public class BankAccountNumber
         Validate();
     }
 
-    public static implicit operator BankAccountNumber(string accountNumber) => new BankAccountNumber(accountNumber);
+    public static implicit operator BankAccountNumber(string accountNumber) => new(accountNumber);
 
-    protected readonly List<string> Warnings = new List<string>();
+    protected readonly List<string> Warnings = new();
 
     public string CountryCode { get; protected set; }
 

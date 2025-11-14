@@ -3,14 +3,9 @@ using System.Text.RegularExpressions;
 
 namespace Peereflits.Shared.Types.Bsn;
 
-public readonly struct Burgerservicenummer
+public readonly struct Burgerservicenummer(int nummer)
 {
-    private readonly int burgerServiceNummer;
-
-    public Burgerservicenummer(int nummer)
-    {
-        this.burgerServiceNummer = nummer;
-    }
+    private readonly int burgerServiceNummer = nummer;
 
     public bool IsValid => IsValidBsn();
 

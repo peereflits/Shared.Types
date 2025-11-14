@@ -4,15 +4,13 @@ using System.Globalization;
 namespace Peereflits.Shared.Types.Geld;
 
 public readonly struct Bedrag
+(
+    decimal value,
+    char symbol = '€'
+)
 {
-    private readonly char symbol;
-    private readonly decimal value;
-
-    public Bedrag(decimal value, char symbol = '€')
-    {
-        this.value = value;
-        this.symbol = symbol;
-    }
+    private readonly char symbol = symbol;
+    private readonly decimal value = value;
 
     public static implicit operator decimal(Bedrag bedrag) => bedrag.value;
     public static implicit operator Bedrag(decimal value) => new(value);
@@ -87,7 +85,7 @@ public readonly struct Bedrag
                              CurrencyDecimalDigits = 2,
                              CurrencyDecimalSeparator = ",",
                              CurrencyGroupSeparator = ".",
-                             CurrencyGroupSizes = new[] { 3 },
+                             CurrencyGroupSizes = [3],
                              CurrencyPositivePattern = symbolSpaceNumber,
                              CurrencyNegativePattern = symbolSpaceNumberMinus
                          };
