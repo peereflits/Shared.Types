@@ -19,7 +19,7 @@
 	</PropertyGroup>
 
 	<PropertyGroup Label="Package">
-		<VersionPrefix>1.0.2</VersionPrefix>
+		<Version>3.0.3</Version>
 	</PropertyGroup>
 
 	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
